@@ -3,7 +3,7 @@ var SortingAlgorithms = (function (module) {
   // Bring the _private variable back into this context
   var _private = module._private = module._private || {};
 
-  var mergeSort = function (data, sortKey) {
+  var mergeSort = function (data) {
 
     // Don't sort arrays that don't have at least 2 elements
     if (data.length < 2) {
@@ -15,12 +15,12 @@ var SortingAlgorithms = (function (module) {
       right = data.slice(middle),
       returnData;
 
-    returnData = merge(mergeSort(left, sortKey), mergeSort(right, sortKey), sortKey);
+    returnData = merge(mergeSort(left), mergeSort(right));
 
     return returnData;
   };
 
-  var merge  = function (left, right, sortKey) {
+  var merge  = function (left, right) {
     var returnData = [];
 
     // Execute while the two divisions are unsorted
@@ -28,16 +28,23 @@ var SortingAlgorithms = (function (module) {
 
       var leftObj = left[0],
         rightObj = right[0],
-        leftVal = (sortKey && leftObj[sortKey]) ? leftObj[sortKey] : leftObj,
-        rightVal = (sortKey && rightObj[sortKey]) ? rightObj[sortKey] : rightObj;
+        leftVal = (_private.sortKey && leftObj[_private.sortKey]) ? leftObj[_private.sortKey] : leftObj,
+        rightVal = (_private.sortKey && rightObj[_private.sortKey]) ? rightObj[_private.sortKey] : rightObj;
 
-      console.log(sortKey, leftVal, rightVal);
-
-      if (leftVal <= rightVal) {
-        returnData[returnData.length] = left.shift();
+      if (_private.isReversed) {
+        if (leftVal >= rightVal) {
+          returnData[returnData.length] = left.shift();
+        } else {
+          returnData[returnData.length] = right.shift();
+        }
       } else {
-        returnData[returnData.length] = right.shift();
+        if (leftVal <= rightVal) {
+          returnData[returnData.length] = left.shift();
+        } else {
+          returnData[returnData.length] = right.shift();
+        }
       }
+
     }
 
     // Add the leftovers
@@ -52,10 +59,11 @@ var SortingAlgorithms = (function (module) {
     return returnData;
   };
 
-  module.mergeSort = function (data, sortKey, isReversed) {
-    console.log('mergeSort');
+  module.mergeSort = function (o) {
 
-    return  mergeSort(data, sortKey);
+    this.init(o);
+
+    return  mergeSort(o.data);
   };
 
   return module;

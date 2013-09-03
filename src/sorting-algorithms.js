@@ -14,10 +14,7 @@ var SortingAlgorithms = (function (module) {
     };
 
   // data, type, isReversed
-  var sort = function (o) {
-
-    var sortType,
-      newData;
+  module.init = function (o) {
 
     // This can only sort arrays
     if (!o.data instanceof Array) {
@@ -25,24 +22,10 @@ var SortingAlgorithms = (function (module) {
       return false;
     }
 
-    // Default the sortType to quick sort
-    sortType = o.type || 'quick';
+    _private.sortKey = o.sortKey || null;
+    _private.isReversed = o.isReversed || false;
 
-    switch (sortType) {
-      case 'bubble':
-        newData = module.bubbleSort(o.data, o.sortKey, o.isReversed);
-        break;
-      case 'merge':
-        newData = module.mergeSort(o.data, o.sortKey, o.isReversed);
-        break;
-    }
-
-    console.log(newData);
-
-    return newData;
   };
 
-  return {
-    sort: sort
-  }
+  return module;
 }(SortingAlgorithms || {}));

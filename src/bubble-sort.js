@@ -3,9 +3,7 @@ var SortingAlgorithms = (function (module) {
   // Bring the _private variable back into this context
   var _private = module._private = module._private || {};
 
-  // TODO: this is bad because it changes the source data - either make a copy here or in the calling object
-  module.bubbleSort = function (data, sortKey, isReversed) {
-    console.log('bubbleSort');
+  var bubbleSort = function (data) {
 
     var isSwapped;
 
@@ -17,15 +15,24 @@ var SortingAlgorithms = (function (module) {
           nextObj = data[i + 1],
 
         // This assumes that sortKey has been set, and that the object has that value
-          // Otherwise it defaults to the object value
+        // Otherwise it defaults to the object value
         // TODO: fix these assumptions
-          thisVal = (sortKey && thisObj[sortKey]) ? thisObj[sortKey] : thisObj,
-          nextVal = (sortKey && nextObj[sortKey]) ? nextObj[sortKey] : nextObj;
+          thisVal = (_private.sortKey && thisObj[_private.sortKey]) ? thisObj[_private.sortKey] : thisObj,
+          nextVal = (_private.sortKey && nextObj[_private.sortKey]) ? nextObj[_private.sortKey] : nextObj;
 
-        if (thisVal > nextVal) {
-          data[i] = nextObj;
-          data[i + 1] = thisObj;
-          isSwapped = true;
+        if (_private.isReversed) {
+          if (thisVal < nextVal) {
+            data[i] = nextObj;
+            data[i + 1] = thisObj;
+            isSwapped = true;
+          }
+        } else {
+
+          if (thisVal > nextVal) {
+            data[i] = nextObj;
+            data[i + 1] = thisObj;
+            isSwapped = true;
+          }
         }
 
       }
@@ -33,6 +40,14 @@ var SortingAlgorithms = (function (module) {
     } while (isSwapped);
 
     return data;
+  };
+
+  // TODO: this is bad because it changes the source data - either make a copy here or in the calling object
+  module.bubbleSort = function (o) {
+
+    this.init(o);
+
+    return bubbleSort(o.data);
   };
 
   return module;
