@@ -140,10 +140,10 @@ module.exports = function(grunt) {
 
     open: {
       app: {
-        url: 'http://localhost:<%= express.app.options.port %>/index.html'
+        url: 'http://localhost:<%= express.app.options.port %>/tests/index.html'
       },
       dist: {
-        url: 'http://localhost:<%= express.dist.options.port %>/index.html'
+        url: 'http://localhost:<%= express.dist.options.port %>/tests/index.html'
       }
     },
 
@@ -169,7 +169,8 @@ module.exports = function(grunt) {
 
     usemin: {
       html: [
-        'dist/index.html'
+        'dist/benchmarks/index.html',
+        'dist/tests/index.html'
       ]
     }
 
