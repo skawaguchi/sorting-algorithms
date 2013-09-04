@@ -36,14 +36,15 @@ var SortingAlgorithms = (function (module) {
     return quickSort(left).concat(pivot, quickSort(right));
   };
 
-  // TODO: this is bad because it changes the source data - either make a copy here or in the calling object
-  module.quickSortRecursive = function (data) {
-    return quickSort(data);
-  };
-
+  // Hi
   module.quickSort = function (o) {
     this.init(o);
-    return module.quickSortRecursive(o.data);
+    return quickSort(o.data);
+  };
+
+  // This sets the module default to quickSort as that will probably be the most-used use-case
+  module.sort = function (o) {
+    module.quickSort(o)
   };
 
   return module;

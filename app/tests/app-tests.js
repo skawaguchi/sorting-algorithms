@@ -34,12 +34,12 @@ describe('SortingAlgorithms', function () {
 
       if (isReversed) {
         if (thisVal < nextVal) {
-          console.log(data);
+          console.log('Error in reversed sequence', thisVal, nextVal, data);
           return false;
         }
       } else {
         if (thisVal > nextVal) {
-          console.log(thisVal, nextVal, data);
+          console.log('Error in sequence', thisVal, nextVal, data);
           return false;
         }
       }
@@ -246,6 +246,10 @@ describe('SortingAlgorithms', function () {
 
     it('has a quickSort method', function () {
       expect(SortingAlgorithms.quickSort).toBeDefined();
+    });
+
+    it('has a sort method that calls quickSort under the hood', function () {
+      expect(SortingAlgorithms.sort).toBeDefined();
     });
 
     it ('sorts a list of value objects', function () {
