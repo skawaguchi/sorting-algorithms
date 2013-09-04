@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  'use strict';
 
   // ============================================
   // Grunt Configuration
@@ -7,6 +8,33 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
+
+    // --------------------------------------------
+    // Benchmark
+    // --------------------------------------------
+
+    benchmark: {
+      app: {
+        src: [
+          'app/scripts/*.js',
+          'app/benchmarks/*.js'
+        ],
+        dest: 'app/benchmarks/results.csv',
+        options: {
+          displayResults: true
+        }
+      },
+      dist: {
+        src: [
+//          'dist/scripts/sorting-algorithms.min.js',
+          'dist/benchmarks/*.js'
+        ],
+        dest: 'dist/benchmarks/results.csv',
+        options: {
+          displayResults: true
+        }
+      }
+    },
 
     // --------------------------------------------
     // Clean
@@ -46,17 +74,11 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'app',
-            src: [],
-            dest: 'dist/',
-            filter: 'isFile'
-          },
-          {
-            expand: true,
-            cwd: '.',
             src: [
-              'app/libraries',
-              'app/tests',
-              'app/index.html'
+              'benchmarks/*',
+              'libraries/**',
+              'tests/*',
+              'index.html'
             ],
             dest: 'dist/',
             filter: 'isFile'
@@ -158,6 +180,7 @@ module.exports = function(grunt) {
   // Load Node Modules
   // ============================================
 
+  grunt.loadNpmTasks('grunt-benchmark');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -191,6 +214,12 @@ module.exports = function(grunt) {
     'clean:server',
     'express:dist',
     'open:dist'
+  ]);
+
+  // benchmark.js
+  grunt.registerTask('compare', [
+    'benchmark:app',
+    'benchmark:dist'
   ]);
 
   // Create the production distribution version

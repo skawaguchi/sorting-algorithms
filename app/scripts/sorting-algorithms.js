@@ -25,6 +25,7 @@ var SortingAlgorithms = (function (module) {
     _private.sortKey = o.sortKey || null;
     _private.isReversed = o.isReversed || false;
 
+    return true;
   };
 
   return module;

@@ -12,11 +12,11 @@ var SortingAlgorithms = (function (module) {
     var left = [],
       right = [],
       pivot = data[0],
-      pivotVal = _private.sortKey ? pivot[_private.sortKey] : pivot;
+      pivotVal = (_private.sortKey) ? pivot[_private.sortKey] : pivot;
 
     for (var i = 1, iLen = data.length; i < iLen; i++) {
       var thisObj = data[i],
-        thisVal = _private.sortKey ? thisObj[_private.sortKey] : thisObj;
+        thisVal = (_private.sortKey && thisObj[_private.sortKey]) ? thisObj[_private.sortKey] : thisObj;
 
       if (_private.isReversed) {
         if (thisVal > pivotVal) {
@@ -36,7 +36,7 @@ var SortingAlgorithms = (function (module) {
     return quickSort(left).concat(pivot, quickSort(right));
   };
 
-  // Hi
+  //
   module.quickSort = function (o) {
     this.init(o);
     return quickSort(o.data);
@@ -44,7 +44,7 @@ var SortingAlgorithms = (function (module) {
 
   // This sets the module default to quickSort as that will probably be the most-used use-case
   module.sort = function (o) {
-    module.quickSort(o)
+    module.quickSort(o);
   };
 
   return module;

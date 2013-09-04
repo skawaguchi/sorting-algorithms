@@ -10,7 +10,7 @@ var SortingAlgorithms = (function (module) {
       return data;
     }
 
-    var middle = parseInt(data.length / 2),
+    var middle = parseInt(data.length / 2, 10),
       left = data.slice(0, middle),
       right = data.slice(middle),
       returnData;

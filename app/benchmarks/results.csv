@@ -1,0 +1,61 @@
+name,date,error,count,cycles,hz
+"Quick Sort","Wed Sep 04 2013 10:41:05 GMT-0400 (EDT)",,8584,6,167661.2607638426
+"Bubble Sort","Wed Sep 04 2013 10:41:10 GMT-0400 (EDT)",,316247,6,6053916.580501603
+"Merge Sort","Wed Sep 04 2013 10:41:16 GMT-0400 (EDT)",,26265,6,508389.18346701004
+"Quick Sort","Wed Sep 04 2013 10:44:02 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:44:08 GMT-0400 (EDT)",,318758,4,6185657.65903935
+"Merge Sort","Wed Sep 04 2013 10:44:13 GMT-0400 (EDT)",,26385,7,440914.22849539906
+"Quick Sort","Wed Sep 04 2013 10:44:16 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:44:22 GMT-0400 (EDT)",,323182,4,6249381.134044898
+"Merge Sort","Wed Sep 04 2013 10:44:27 GMT-0400 (EDT)",,26005,5,496755.6918932986
+"Quick Sort","Wed Sep 04 2013 10:44:44 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:44:50 GMT-0400 (EDT)",,323091,4,6242878.736671269
+"Merge Sort","Wed Sep 04 2013 10:44:55 GMT-0400 (EDT)",,24115,5,441641.8906648591
+"Quick Sort","Wed Sep 04 2013 10:45:34 GMT-0400 (EDT)",,8548,6,159496.54818245294
+"Bubble Sort","Wed Sep 04 2013 10:45:40 GMT-0400 (EDT)",,327444,7,6016517.470084739
+"Merge Sort","Wed Sep 04 2013 10:45:45 GMT-0400 (EDT)",,24811,6,461304.66534586187
+"Quick Sort","Wed Sep 04 2013 10:46:21 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:46:21 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:46:21 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:48:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:48:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:48:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:49:11 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:49:11 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:49:11 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:53:28 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:53:28 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:53:28 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:53:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:53:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:53:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:53:56 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:53:56 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:53:56 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:54:16 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:54:16 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:54:16 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:55:42 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:55:42 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:55:42 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:55:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:55:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:55:47 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:56:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:56:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:56:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:57:39 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:57:39 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:57:39 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:58:08 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:58:08 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:58:08 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:58:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:58:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:58:26 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 10:58:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 10:58:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 10:58:57 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Quick Sort","Wed Sep 04 2013 11:10:12 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Bubble Sort","Wed Sep 04 2013 11:10:12 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0
+"Merge Sort","Wed Sep 04 2013 11:10:12 GMT-0400 (EDT)",ReferenceError: SortingAlgorithms is not defined,0,0,0

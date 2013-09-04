@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Sorting Algorithm Comparison Benchmarks</title>
+  </head>
+  <body>
+
+  <div id="output"></div>
+
+  <script src="../libraries/benchmark/benchmark.js"></script>
+  <script src="../scripts/bubble-sort.js"></script>
+  <script src="../scripts/merge-sort.js"></script>
+  <script src="../scripts/quick-sort-recursive.js"></script>
+  <script src="../scripts/sorting-algorithms.js"></script>
+
+  <script>
+
+    var objectData =  [
+          {id: 1000},
+          {id: 3},
+          {id: 1},
+          {id: 5},
+          {id: 3},
+          {id: 2}
+        ],
+        stringData = ['f', 'b', 'c', 'a', 'd', 'z'],
+        mixedData = [6, 4, 1, {id: 5}, 888, 610, 5],
+        numberData = [6, 2, 4, 1, 700, 888, 610, 2, 4, 1, 1];
+
+
+    var testData = objectData;
+
+
+    var suite = new Benchmark.Suite;
+
+    suite.add('quickSort', function () {
+      SortingAlgorithms.quickSort({
+        data: testData,
+        sortKey: 'id'
+      });
+    });
+
+    suite.add('mergeSort', function () {
+      SortingAlgorithms.mergeSort({
+        data: testData,
+        sortKey: 'id'
+      });
+    });
+
+    suite.on('start', function () {
+      console.log('Benchmark started');
+    });
+
+    suite.on('cycle', function (event) {
+      console.log((event.target.toString()));
+    });
+
+    suite.on('complete', function () {
+      console.log('Fastest is ' + this.filter('fastest').pluck('name'));
+    });
+
+    suite.run();
+
+  </script>
+
+  </body>
+</html>
