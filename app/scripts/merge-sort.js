@@ -56,6 +56,34 @@ var SortingAlgorithms = (function (module) {
       returnData[returnData.length] = right.shift();
     }
 
+
+//      if (_private.isReversed) {
+//        if (leftVal >= rightVal) {
+//          returnData[returnData.length] = left.splice(0, 1);
+//        } else {
+//          returnData[returnData.length] = right.splice(0, 1);
+//        }
+//      } else {
+//        if (leftVal <= rightVal) {
+//          returnData[returnData.length] = left.splice(0, 1);
+//        } else {
+//          returnData[returnData.length] = right.splice(0, 1);
+//        }
+//      }
+//
+//    }
+//
+//    // Add the leftovers
+//    while (left.length) {
+////      returnData[returnData.length] = left.shift();
+//      returnData[returnData.length] = left.splice(0, 1);
+//    }
+//
+//    while (right.length) {
+////      returnData[returnData.length] = right.shift();
+//      returnData[returnData.length] = right.splice(0, 1);
+//    }
+
     return returnData;
   };
 
