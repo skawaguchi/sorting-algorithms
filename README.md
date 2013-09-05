@@ -7,6 +7,11 @@ To use the following Grunt scripts, make sure you've installed the appropriate n
 
 For building a minified production version, run grunt dist. You really only need /dist/scripts/sorting-algorithms.min.js. The rest is just Jasmine tests.
 
+Interesting Notes
+-----------------
+
+Because mergeSort and quickSort use arrays, they're far SLOWER than bubbleSort!
+
 Resources
 http://www.stoimen.com/blog/category/algorithms/
 

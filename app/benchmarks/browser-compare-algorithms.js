@@ -12,7 +12,7 @@ var objectData =  [
   numberData = [6, 2, 4, 1, 700, 888, 610, 2, 4, 1, 1];
 
 
-var testData = objectData;
+var testData = numberData;
 
 
 var suite = new Benchmark.Suite;
@@ -25,6 +25,13 @@ var updateOutput = function () {
 
 suite.add('quickSort', function () {
   SortingAlgorithms.quickSort({
+    data: testData,
+    sortKey: 'id'
+  });
+});
+
+suite.add('quickSortAlt', function () {
+  SortingAlgorithms.quickSortAlt({
     data: testData,
     sortKey: 'id'
   });
