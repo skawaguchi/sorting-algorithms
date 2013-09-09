@@ -1,9 +1,8 @@
-- Integrate Matt's method for producing random data sets to test on
 - fix up quick sort alt
 - Finalize the benchmark.js integration. Not sure if grunt-benchmark cuts it. I guess I can extend it to allow you to load external files to run benchmark on.
 - Run all data type tests in benchmarks
 - Add other algorithms
   - include a comparison to the native sort
-  - heap sort
+  - heap sort, etc.
 - include link to that algorithm visualizer
 - fix up the readme
