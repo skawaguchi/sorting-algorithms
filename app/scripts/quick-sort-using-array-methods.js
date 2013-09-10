@@ -43,10 +43,5 @@ var SortingAlgorithms = (function (module) {
     return quickSort(o.data);
   };
 
-  // This sets the module default to quickSort as that will probably be the most-used use-case
-  module.sort = function (o) {
-    module.quickSort(o);
-  };
-
   return module;
 }(SortingAlgorithms || {}));

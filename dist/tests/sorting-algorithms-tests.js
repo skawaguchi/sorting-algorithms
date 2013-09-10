@@ -242,9 +242,6 @@ describe('SortingAlgorithms', function () {
       expect(SortingAlgorithms.quickSort).toBeDefined();
     });
 
-    it('should have a sort method that calls quickSort under the hood', function () {
-      expect(SortingAlgorithms.sort).toBeDefined();
-    });
 
     it ('should sort a list of value objects', function () {
 
@@ -347,12 +344,54 @@ describe('SortingAlgorithms', function () {
       expect(SortingAlgorithms.quickSortAlt).toBeDefined();
     });
 
+    it('should have a sort method that calls quickSort under the hood', function () {
+      expect(SortingAlgorithms.sort).toBeDefined();
+    });
+
     it ('should sort a list of value objects', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(objectData),
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data)).toBe(true);
+    });
+
+    it ('should reverse sort a list of value objects', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(objectData),
+        isReversed: true,
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data, true)).toBe(true);
+    });
+
+    it ('should sort a list of numbers', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
         data: TestDataGenerator.getCopy(numberData),
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data)).toBe(true);
+    });
+
+    it ('should reverse sort a list of numbers', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(numberData),
+        isReversed: true,
         sortKey: sortKey
       });
 

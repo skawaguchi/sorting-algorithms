@@ -7,7 +7,6 @@ describe('SortingAlgorithms', function () {
 
   var objectData = TestDataGenerator.getData('object'),
     stringData = TestDataGenerator.getData('string'),
-    mixedData = TestDataGenerator.getData('mixed'),
     numberData = TestDataGenerator.getData('number');
 
 
@@ -28,12 +27,12 @@ describe('SortingAlgorithms', function () {
 
       if (isReversed) {
         if (thisVal < nextVal) {
-          console.log('Error in reversed sequence', 'index: ' + i, thisVal, nextVal, data);
+          console.log('Error in reversed sequence', 'index:', i, 'values:', thisVal, nextVal, data);
           return false;
         }
       } else {
         if (thisVal > nextVal) {
-          console.log('Error in sequence', 'index: ' + i, thisVal, nextVal, data);
+          console.log('Error in sequence', 'index:', i, 'values:', thisVal, nextVal, data);
           return false;
         }
       }
@@ -109,25 +108,6 @@ describe('SortingAlgorithms', function () {
         data: TestDataGenerator.getCopy(stringData),
         isReversed: true
       });
-      expect(checkValue(data, true)).toBe(true);
-    });
-
-    it('should sort a list of mixed elements', function () {
-      var data = SortingAlgorithms.bubbleSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        sortKey: sortKey
-      });
-
-      expect(checkValue(data)).toBe(true);
-    });
-
-    it('should reverse sort a list of mixed elements', function () {
-      var data = SortingAlgorithms.bubbleSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        isReversed: true,
-        sortKey: sortKey
-      });
-
       expect(checkValue(data, true)).toBe(true);
     });
 
@@ -207,27 +187,6 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('should sort a list of mixed data', function () {
-
-      var data = SortingAlgorithms.mergeSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        isReversed: false,
-        sortKey: sortKey
-      });
-
-      expect(checkValue(data)).toBe(true);
-    });
-
-    it ('should reverse sort  a list of mixed data', function () {
-
-      var data = SortingAlgorithms.mergeSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        isReversed: true,
-        sortKey: sortKey
-      });
-
-      expect(checkValue(data, true)).toBe(true);
-    });
   });
 
 
@@ -242,9 +201,6 @@ describe('SortingAlgorithms', function () {
       expect(SortingAlgorithms.quickSort).toBeDefined();
     });
 
-    it('should have a sort method that calls quickSort under the hood', function () {
-      expect(SortingAlgorithms.sort).toBeDefined();
-    });
 
     it ('should sort a list of value objects', function () {
 
@@ -311,30 +267,6 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('should sort a list of mixed data', function () {
-
-      // NOTE: The default mode is quick sort so we don't need to pass type in
-
-      var data = SortingAlgorithms.quickSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        sortKey: sortKey
-      });
-
-      expect(checkValue(data)).toBe(true);
-    });
-
-    it ('should reverse sort a list of mixed data', function () {
-
-      var data = SortingAlgorithms.quickSort({
-        data: TestDataGenerator.getCopy(mixedData),
-        isReversed: true,
-        sortKey: sortKey
-      });
-
-      expect(checkValue(data, true)).toBe(true);
-    });
-
-
   });
 
   // ==============================
@@ -347,12 +279,54 @@ describe('SortingAlgorithms', function () {
       expect(SortingAlgorithms.quickSortAlt).toBeDefined();
     });
 
+    it('should have a sort method that calls quickSort under the hood', function () {
+      expect(SortingAlgorithms.sort).toBeDefined();
+    });
+
     it ('should sort a list of value objects', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(objectData),
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data)).toBe(true);
+    });
+
+    it ('should reverse sort a list of value objects', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(objectData),
+        isReversed: true,
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data, true)).toBe(true);
+    });
+
+    it ('should sort a list of numbers', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
         data: TestDataGenerator.getCopy(numberData),
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data)).toBe(true);
+    });
+
+    it ('should reverse sort a list of numbers', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(numberData),
+        isReversed: true,
         sortKey: sortKey
       });
 

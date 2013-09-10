@@ -26,24 +26,12 @@ var TestDataGenerator = (function (module) {
 
   var getValue = function (type) {
     var value,
-      characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    if (type === 'mixed') {
-      var randomType = parseInt(Math.random() * 3, 10);
-
-      if (randomType === 0) {
-        type = 'object';
-      } else if (randomType === 1) {
-        type = 'string';
-      } else {
-        type = 'number';
-      }
-    }
+      characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
     switch (type) {
 
       case 'object':
-        value = {id: parseInt(Math.random() * 1000, 10)};
+        value = {id: parseInt(Math.random() * 100, 10)};
         break;
 
       case 'string':
@@ -51,7 +39,7 @@ var TestDataGenerator = (function (module) {
         break;
 
       default:
-        value = parseInt(Math.random() * 1000, 10);
+        value = parseInt(Math.random() * 100, 10);
         break;
     }
 
@@ -63,7 +51,7 @@ var TestDataGenerator = (function (module) {
     var testData = [];
 
     // Default to one thousand iterations
-    iterations = 1000 || iterations;
+    iterations = 10 || iterations;
 
     for (var i = 0; i < iterations; i++) {
       testData[testData.length] = getValue(type);

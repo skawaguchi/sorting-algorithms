@@ -163,6 +163,11 @@ var SortingAlgorithms = (function (module) {
 
   return module;
 }(SortingAlgorithms || {}));
+var SortingAlgorithms = (function (module) {
+  'use strict';
+
+  return module;
+}(SortingAlgorithms || {}));
 // http://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
 
 var SortingAlgorithms = (function (module) {
@@ -211,8 +216,22 @@ var SortingAlgorithms = (function (module) {
 
     if (items.length > 1) {
 
-      left = typeof left !== "number" ? 0 : left;
-      right = typeof right !== "number" ? items.length - 1 : right;
+      if (typeof left === 'object' && left[_private.sortKey] !== undefined) {
+        left = [_private.sortKey];
+      } else if (typeof left !== 'number') {
+        left = 0;
+      }
+
+      if (typeof right === 'object' && right[_private.sortKey] !== undefined) {
+        right = right[_private.sortKey];
+      } else if (typeof right !== 'number') {
+        right = items.length - 1;
+      }
+
+
+//      if (_private.isReversed) {
+//
+//      }
 
       index = partition(items, left, right);
 
@@ -230,9 +249,16 @@ var SortingAlgorithms = (function (module) {
   };
 
   module.quickSortAlt = function (o) {
+    console.log(o.data);
     this.init(o);
 
     return quickSortAlt(o.data);
+  };
+
+
+  // This sets the module default to quickSort as that will probably be the most-used use-case
+  module.sort = function (o) {
+    module.quickSortAlt(o);
   };
 
   return module;
@@ -280,11 +306,6 @@ var SortingAlgorithms = (function (module) {
   module.quickSort = function (o) {
     this.init(o);
     return quickSort(o.data);
-  };
-
-  // This sets the module default to quickSort as that will probably be the most-used use-case
-  module.sort = function (o) {
-    module.quickSort(o);
   };
 
   return module;
