@@ -1,4 +1,5 @@
 describe('SortingAlgorithms', function () {
+  'use strict';
 
   // ==============================
   // Test data

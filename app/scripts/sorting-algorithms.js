@@ -1,4 +1,5 @@
 var SortingAlgorithms = (function (module) {
+  'use strict';
 
   // Private state across files
   var _private = module._private = module._private || {},

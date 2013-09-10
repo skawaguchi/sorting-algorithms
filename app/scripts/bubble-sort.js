@@ -1,4 +1,5 @@
 var SortingAlgorithms = (function (module) {
+  'use strict';
 
   // Bring the _private variable back into this context
   var _private = module._private = module._private || {};

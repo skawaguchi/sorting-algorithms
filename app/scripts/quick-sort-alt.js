@@ -1,6 +1,7 @@
 // http://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
 
 var SortingAlgorithms = (function (module) {
+  'use strict';
 
   // Bring the _private variable back into this context
   var _private = module._private = module._private || {};

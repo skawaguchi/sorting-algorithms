@@ -1,20 +1,14 @@
 describe('SortingAlgorithms', function () {
+  'use strict';
 
   // ==============================
   // Test data
   // ==============================
 
-  var objectData =  [
-    {id: 1000},
-    {id: 3},
-    {id: 1},
-    {id: 5},
-    {id: 3},
-    {id: 2}
-    ],
-    stringData = ['f', 'b', 'c', 'a', 'd', 'z'],
-    mixedData = [6, 4, 1, {id: 5}, 888, 610, 5],
-    numberData = [6, 2, 4, 1, 700, 888, 610, 2, 4, 1, 1];
+  var objectData = TestDataGenerator.getData('object'),
+    stringData = TestDataGenerator.getData('string'),
+    mixedData = TestDataGenerator.getData('mixed'),
+    numberData = TestDataGenerator.getData('number');
 
 
   // ==============================
@@ -34,12 +28,12 @@ describe('SortingAlgorithms', function () {
 
       if (isReversed) {
         if (thisVal < nextVal) {
-          console.log('Error in reversed sequence', thisVal, nextVal, data);
+          console.log('Error in reversed sequence', 'index: ' + i, thisVal, nextVal, data);
           return false;
         }
       } else {
         if (thisVal > nextVal) {
-          console.log('Error in sequence', thisVal, nextVal, data);
+          console.log('Error in sequence', 'index: ' + i, thisVal, nextVal, data);
           return false;
         }
       }
@@ -80,7 +74,7 @@ describe('SortingAlgorithms', function () {
     it('reverse sorts a list of value objects', function () {
 
       var data = SortingAlgorithms.bubbleSort({
-        data: objectData,
+        data: TestDataGenerator.getCopy(objectData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -90,14 +84,14 @@ describe('SortingAlgorithms', function () {
 
     it('sorts a list of numbers', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: numberData
+        data: TestDataGenerator.getCopy(numberData)
       });
       expect(checkValue(data)).toBe(true);
     });
 
     it('reverse sorts a list of numbers', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: numberData,
+        data: TestDataGenerator.getCopy(numberData),
         isReversed: true
       });
       expect(checkValue(data, true)).toBe(true);
@@ -105,14 +99,14 @@ describe('SortingAlgorithms', function () {
 
     it('sorts a list of strings', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: stringData
+        data: TestDataGenerator.getCopy(stringData)
       });
       expect(checkValue(data)).toBe(true);
     });
 
     it('reverse sorts a list of strings', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: stringData,
+        data: TestDataGenerator.getCopy(stringData),
         isReversed: true
       });
       expect(checkValue(data, true)).toBe(true);
@@ -120,7 +114,7 @@ describe('SortingAlgorithms', function () {
 
     it('sorts a list of mixed elements', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         sortKey: sortKey
       });
 
@@ -129,7 +123,7 @@ describe('SortingAlgorithms', function () {
 
     it('reverse sorts a list of mixed elements', function () {
       var data = SortingAlgorithms.bubbleSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -155,7 +149,7 @@ describe('SortingAlgorithms', function () {
     it ('sorts a list of value objects', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: objectData,
+        data: TestDataGenerator.getCopy(objectData),
         isReversed: false,
         sortKey: sortKey
       });
@@ -166,7 +160,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of value objects', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: objectData,
+        data: TestDataGenerator.getCopy(objectData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -177,7 +171,7 @@ describe('SortingAlgorithms', function () {
     it ('sorts a list of numbers', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: numberData,
+        data: TestDataGenerator.getCopy(numberData),
         isReversed: false
       });
 
@@ -187,7 +181,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of numbers', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: numberData,
+        data: TestDataGenerator.getCopy(numberData),
         isReversed: true
       });
 
@@ -197,7 +191,7 @@ describe('SortingAlgorithms', function () {
     it ('sorts a list of strings', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: stringData
+        data: TestDataGenerator.getCopy(stringData)
       });
 
       expect(checkValue(data)).toBe(true);
@@ -206,7 +200,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of strings', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: stringData,
+        data: TestDataGenerator.getCopy(stringData),
         isReversed: true
       });
 
@@ -216,7 +210,7 @@ describe('SortingAlgorithms', function () {
     it ('sorts a list of mixed data', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         isReversed: false,
         sortKey: sortKey
       });
@@ -227,7 +221,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of mixed data', function () {
 
       var data = SortingAlgorithms.mergeSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -257,7 +251,7 @@ describe('SortingAlgorithms', function () {
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSort({
-        data: objectData,
+        data: TestDataGenerator.getCopy(objectData),
         sortKey: sortKey
       });
 
@@ -267,7 +261,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of value objects', function () {
 
       var data = SortingAlgorithms.quickSort({
-        data: objectData,
+        data: TestDataGenerator.getCopy(objectData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -280,7 +274,7 @@ describe('SortingAlgorithms', function () {
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSort({
-        data: numberData
+        data: TestDataGenerator.getCopy(numberData)
       });
 
       expect(checkValue(data)).toBe(true);
@@ -289,7 +283,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of numbers', function () {
 
       var data = SortingAlgorithms.quickSort({
-        data: numberData,
+        data: TestDataGenerator.getCopy(numberData),
         isReversed: true
       });
 
@@ -301,7 +295,7 @@ describe('SortingAlgorithms', function () {
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSort({
-        data: stringData
+        data: TestDataGenerator.getCopy(stringData)
       });
 
       expect(checkValue(data)).toBe(true);
@@ -310,7 +304,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of strings', function () {
 
       var data = SortingAlgorithms.quickSort({
-        data: stringData,
+        data: TestDataGenerator.getCopy(stringData),
         isReversed: true
       });
 
@@ -322,7 +316,7 @@ describe('SortingAlgorithms', function () {
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
       var data = SortingAlgorithms.quickSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         sortKey: sortKey
       });
 
@@ -332,7 +326,7 @@ describe('SortingAlgorithms', function () {
     it ('reverse sorts a list of mixed data', function () {
 
       var data = SortingAlgorithms.quickSort({
-        data: mixedData,
+        data: TestDataGenerator.getCopy(mixedData),
         isReversed: true,
         sortKey: sortKey
       });
@@ -341,6 +335,29 @@ describe('SortingAlgorithms', function () {
     });
 
 
+  });
+
+  // ==============================
+  // Quick Sort - Alt
+  // ==============================
+
+  describe('Quick Sort Alt', function () {
+
+    it('has a quickSort method', function () {
+      expect(SortingAlgorithms.quickSortAlt).toBeDefined();
+    });
+
+    it ('sorts a list of value objects', function () {
+
+      // NOTE: The default mode is quick sort so we don't need to pass type in
+
+      var data = SortingAlgorithms.quickSortAlt({
+        data: TestDataGenerator.getCopy(numberData),
+        sortKey: sortKey
+      });
+
+      expect(checkValue(data, true)).toBe(true);
+    });
   });
 
 });

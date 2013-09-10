@@ -78,7 +78,7 @@ module.exports = function(grunt) {
               'benchmarks/*',
               'libraries/**',
               'tests/*',
-              'index.html'
+              '*.html'
             ],
             dest: 'dist/',
             filter: 'isFile'
@@ -140,10 +140,10 @@ module.exports = function(grunt) {
 
     open: {
       app: {
-        url: 'http://localhost:<%= express.app.options.port %>/tests/index.html'
+        url: 'http://localhost:<%= express.app.options.port %>/jasmine-tests.html'
       },
       dist: {
-        url: 'http://localhost:<%= express.dist.options.port %>/tests/index.html'
+        url: 'http://localhost:<%= express.dist.options.port %>/jasmine-tests.html'
       }
     },
 
@@ -169,8 +169,8 @@ module.exports = function(grunt) {
 
     usemin: {
       html: [
-        'dist/benchmarks/index.html',
-        'dist/tests/index.html'
+        'dist/benchmarks.html',
+        'dist/jasmine-tests.html'
       ]
     }
 

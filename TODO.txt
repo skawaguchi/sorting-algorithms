@@ -3,6 +3,6 @@
 - Run all data type tests in benchmarks
 - Add other algorithms
   - include a comparison to the native sort
-  - heap sort, etc.
+  - heap, shell, insertion, selection, , etc.
 - include link to that algorithm visualizer
 - fix up the readme
