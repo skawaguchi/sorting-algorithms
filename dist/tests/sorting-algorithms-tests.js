@@ -45,7 +45,7 @@ describe('SortingAlgorithms', function () {
     sortKey = 'id';
   });
 
-  it ('has a module called \'SortingAlgorihtms\'', function () {
+  it ('should have a module called \'SortingAlgorihtms\'', function () {
     expect(SortingAlgorithms).toBeDefined();
   });
 
@@ -57,11 +57,11 @@ describe('SortingAlgorithms', function () {
 
   describe('Bubble Sort', function () {
 
-    it('has a bubbleSort method', function () {
+    it('should have a bubbleSort method', function () {
       expect(SortingAlgorithms.bubbleSort).toBeDefined();
     });
 
-    it('sorts a list of value objects', function () {
+    it('should sort a list of value objects', function () {
 
       var data = SortingAlgorithms.bubbleSort({
         data: objectData,
@@ -71,7 +71,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it('reverse sorts a list of value objects', function () {
+    it('should reverse sort a list of value objects', function () {
 
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(objectData),
@@ -82,14 +82,14 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it('sorts a list of numbers', function () {
+    it('should sort a list of numbers', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(numberData)
       });
       expect(checkValue(data)).toBe(true);
     });
 
-    it('reverse sorts a list of numbers', function () {
+    it('should reverse sort a list of numbers', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(numberData),
         isReversed: true
@@ -97,14 +97,14 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it('sorts a list of strings', function () {
+    it('should sort a list of strings', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(stringData)
       });
       expect(checkValue(data)).toBe(true);
     });
 
-    it('reverse sorts a list of strings', function () {
+    it('should reverse sort a list of strings', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(stringData),
         isReversed: true
@@ -112,7 +112,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it('sorts a list of mixed elements', function () {
+    it('should sort a list of mixed elements', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(mixedData),
         sortKey: sortKey
@@ -121,7 +121,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it('reverse sorts a list of mixed elements', function () {
+    it('should reverse sort a list of mixed elements', function () {
       var data = SortingAlgorithms.bubbleSort({
         data: TestDataGenerator.getCopy(mixedData),
         isReversed: true,
@@ -142,11 +142,11 @@ describe('SortingAlgorithms', function () {
 
   describe('Merge Sort', function () {
 
-    it('has a mergeSort method', function () {
+    it('should have a mergeSort method', function () {
       expect(SortingAlgorithms.mergeSort).toBeDefined();
     });
 
-    it ('sorts a list of value objects', function () {
+    it ('should sort a list of value objects', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(objectData),
@@ -157,7 +157,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of value objects', function () {
+    it ('should reverse sort  a list of value objects', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(objectData),
@@ -168,7 +168,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of numbers', function () {
+    it ('should sort a list of numbers', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(numberData),
@@ -178,7 +178,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of numbers', function () {
+    it ('should reverse sort  a list of numbers', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(numberData),
@@ -188,7 +188,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of strings', function () {
+    it ('should sort a list of strings', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(stringData)
@@ -197,7 +197,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of strings', function () {
+    it ('should reverse sort  a list of strings', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(stringData),
@@ -207,7 +207,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of mixed data', function () {
+    it ('should sort a list of mixed data', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(mixedData),
@@ -218,7 +218,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of mixed data', function () {
+    it ('should reverse sort  a list of mixed data', function () {
 
       var data = SortingAlgorithms.mergeSort({
         data: TestDataGenerator.getCopy(mixedData),
@@ -238,15 +238,15 @@ describe('SortingAlgorithms', function () {
 
   describe('Quick Sort Recursive', function () {
 
-    it('has a quickSort method', function () {
+    it('should have a quickSort method', function () {
       expect(SortingAlgorithms.quickSort).toBeDefined();
     });
 
-    it('has a sort method that calls quickSort under the hood', function () {
+    it('should have a sort method that calls quickSort under the hood', function () {
       expect(SortingAlgorithms.sort).toBeDefined();
     });
 
-    it ('sorts a list of value objects', function () {
+    it ('should sort a list of value objects', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
@@ -258,7 +258,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of value objects', function () {
+    it ('should reverse sort  a list of value objects', function () {
 
       var data = SortingAlgorithms.quickSort({
         data: TestDataGenerator.getCopy(objectData),
@@ -269,7 +269,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of numbers', function () {
+    it ('should sort a list of numbers', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
@@ -280,7 +280,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of numbers', function () {
+    it ('should reverse sort  a list of numbers', function () {
 
       var data = SortingAlgorithms.quickSort({
         data: TestDataGenerator.getCopy(numberData),
@@ -290,7 +290,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of strings', function () {
+    it ('should sort a list of strings', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
@@ -301,7 +301,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of strings', function () {
+    it ('should reverse sort  a list of strings', function () {
 
       var data = SortingAlgorithms.quickSort({
         data: TestDataGenerator.getCopy(stringData),
@@ -311,7 +311,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data, true)).toBe(true);
     });
 
-    it ('sorts a list of mixed data', function () {
+    it ('should sort a list of mixed data', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 
@@ -323,7 +323,7 @@ describe('SortingAlgorithms', function () {
       expect(checkValue(data)).toBe(true);
     });
 
-    it ('reverse sorts a list of mixed data', function () {
+    it ('should reverse sort a list of mixed data', function () {
 
       var data = SortingAlgorithms.quickSort({
         data: TestDataGenerator.getCopy(mixedData),
@@ -343,11 +343,11 @@ describe('SortingAlgorithms', function () {
 
   describe('Quick Sort Alt', function () {
 
-    it('has a quickSort method', function () {
+    it('should have a quickSort method', function () {
       expect(SortingAlgorithms.quickSortAlt).toBeDefined();
     });
 
-    it ('sorts a list of value objects', function () {
+    it ('should sort a list of value objects', function () {
 
       // NOTE: The default mode is quick sort so we don't need to pass type in
 

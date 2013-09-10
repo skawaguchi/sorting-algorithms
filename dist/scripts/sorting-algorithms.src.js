@@ -179,9 +179,9 @@ var SortingAlgorithms = (function (module) {
 
   var partition = function (items, left, right) {
 
-    var pivot   = items[Math.floor((right + left) / 2)],
-      i       = left,
-      j       = right;
+    var pivot = items[Math.floor((right + left) / 2)],
+      i = left,
+      j = right;
 
 
     while (i <= j) {
@@ -203,6 +203,7 @@ var SortingAlgorithms = (function (module) {
 
     return i;
   };
+
 
   var quickSortAlt = function (items, left, right) {
 
@@ -231,9 +232,7 @@ var SortingAlgorithms = (function (module) {
   module.quickSortAlt = function (o) {
     this.init(o);
 
-    var data = quickSortAlt(o.data);
-
-    return data;
+    return quickSortAlt(o.data);
   };
 
   return module;
