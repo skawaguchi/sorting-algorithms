@@ -14,28 +14,29 @@ var SortingAlgorithms = (function (module) {
       for (var i = 0, iLen = data.length - 1; i < iLen; i++) {
         var thisObj = data[i],
           nextObj = data[i + 1],
+          temp,
 
         // This assumes that sortKey has been set, and that the object has that value
         // Otherwise it defaults to the object value
         // TODO: fix these assumptions
-          thisVal = (_private.sortKey && thisObj[_private.sortKey]) ? thisObj[_private.sortKey] : thisObj,
-          nextVal = (_private.sortKey && nextObj[_private.sortKey]) ? nextObj[_private.sortKey] : nextObj;
+          thisVal = (_private.sortKey && thisObj[_private.sortKey] !== undefined) ? thisObj[_private.sortKey] : thisObj,
+          nextVal = (_private.sortKey && nextObj[_private.sortKey] !== undefined) ? nextObj[_private.sortKey] : nextObj;
 
         if (_private.isReversed) {
           if (thisVal < nextVal) {
-            data[i] = nextObj;
-            data[i + 1] = thisObj;
+            temp = data[i];
+            data[i] = data[i + 1];
+            data[i + 1] = temp;
             isSwapped = true;
           }
         } else {
-
           if (thisVal > nextVal) {
-            data[i] = nextObj;
-            data[i + 1] = thisObj;
+            temp = data[i];
+            data[i] = data[i + 1];
+            data[i + 1] = temp;
             isSwapped = true;
           }
         }
-
       }
 
     } while (isSwapped);
@@ -94,8 +95,8 @@ var SortingAlgorithms = (function (module) {
 
       var leftObj = left[0],
         rightObj = right[0],
-        leftVal = (_private.sortKey && leftObj[_private.sortKey]) ? leftObj[_private.sortKey] : leftObj,
-        rightVal = (_private.sortKey && rightObj[_private.sortKey]) ? rightObj[_private.sortKey] : rightObj;
+        leftVal = (_private.sortKey && leftObj[_private.sortKey] !== undefined) ? leftObj[_private.sortKey] : leftObj,
+        rightVal = (_private.sortKey && rightObj[_private.sortKey] !== undefined) ? rightObj[_private.sortKey] : rightObj;
 
       if (_private.isReversed) {
         if (leftVal >= rightVal) {

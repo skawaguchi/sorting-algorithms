@@ -29,8 +29,8 @@ var SortingAlgorithms = (function (module) {
 
       var leftObj = left[0],
         rightObj = right[0],
-        leftVal = (_private.sortKey && leftObj[_private.sortKey]) ? leftObj[_private.sortKey] : leftObj,
-        rightVal = (_private.sortKey && rightObj[_private.sortKey]) ? rightObj[_private.sortKey] : rightObj;
+        leftVal = (_private.sortKey && leftObj[_private.sortKey] !== undefined) ? leftObj[_private.sortKey] : leftObj,
+        rightVal = (_private.sortKey && rightObj[_private.sortKey] !== undefined) ? rightObj[_private.sortKey] : rightObj;
 
       if (_private.isReversed) {
         if (leftVal >= rightVal) {
